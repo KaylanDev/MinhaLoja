@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,9 @@ namespace MinhaLoja.Core.Models
 {
     public class ItemPedido
     {
-        public int Id { get; set; }
-        public int PedidoId { get; set; }
-        public int ProdutoId { get; set; }
+        public ObjectId Id { get; set; }
+        public ObjectId PedidoId { get; set; }
+        public ObjectId ProdutoId { get; set; }
         public string NomeProduto { get; set; }
         public decimal PrecoUnitario { get; set; }
         public int Quantidade { get; set; }
