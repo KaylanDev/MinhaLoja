@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MinhaLoja.Core\MinhaLoja.Core.csproj" />
+    <ProjectReference Include="..\MinhaLoja.CrossCutting\MinhaLoja.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>

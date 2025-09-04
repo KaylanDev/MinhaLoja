@@ -1,5 +1,11 @@
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MinhaLoja.Core.Interfaces;
+using MinhaLoja.Core.Models;
+using MinhaLoja.Domain.Interface;
+using MinhaLoja.Domain.Interfaces;
+using MinhaLoja.Infrastructure.Repository;
 using MinhaLoja.Models;
 
 namespace MinhaLoja.Controllers
@@ -7,15 +13,18 @@ namespace MinhaLoja.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IProdutoService _produtoRepository;
+        public HomeController(ILogger<HomeController> logger,IProdutoService produtoRepository)
         {
             _logger = logger;
+            _produtoRepository = produtoRepository;
         }
 
         public IActionResult Index()
         {
+
             return View();
+
         }
 
         public IActionResult Privacy()

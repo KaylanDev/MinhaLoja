@@ -1,7 +1,10 @@
+using MinhaLoja.CrossCutting.IoC;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.Addinfrastruture(builder.Configuration);
 
 var app = builder.Build();
 
