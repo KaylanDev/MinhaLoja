@@ -1,4 +1,4 @@
-﻿using MinhaLoja.Core.Models.Enums;
+﻿using MinhaLoja.Domain.Models.Enums;
 using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MinhaLoja.Core.Models
+namespace MinhaLoja.Domain.Models
 {
     public class Pedido
     {

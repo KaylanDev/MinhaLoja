@@ -2,7 +2,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MinhaLoja.Core.Interfaces;
-using MinhaLoja.Core.Models;
+using MinhaLoja.Domain.Models;
 using MinhaLoja.Domain.Interface;
 using MinhaLoja.Domain.Interfaces;
 using MinhaLoja.Infrastructure.Repository;

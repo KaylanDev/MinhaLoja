@@ -1,4 +1,4 @@
-﻿using MinhaLoja.Core.Models;
+﻿using MinhaLoja.Domain.Models;
 using MinhaLoja.Domain.Interfaces;
 using MinhaLoja.Infrastructure.Context;
 using System;

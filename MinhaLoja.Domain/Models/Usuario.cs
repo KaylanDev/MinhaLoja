@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MinhaLoja.Core.Models
+namespace MinhaLoja.Domain.Models
 {
     public class Usuario
     {

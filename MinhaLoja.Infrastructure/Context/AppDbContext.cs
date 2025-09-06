@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MinhaLoja.Core.Models;
+using MinhaLoja.Domain.Models;
 using MongoDB.EntityFrameworkCore.Extensions;
 
 namespace MinhaLoja.Infrastructure.Context

@@ -1,8 +1,10 @@
 ﻿using Amazon.Runtime.CredentialManagement.Internal;
 using FluentResults;
+using MinhaLoja.Core.Dtos;
+using MinhaLoja.Core.Dtos.Extensions;
 using MinhaLoja.Core.Interfaces;
-using MinhaLoja.Core.Models;
 using MinhaLoja.Domain.Interfaces;
+using MinhaLoja.Domain.Models;
 using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
@@ -21,16 +23,17 @@ namespace MinhaLoja.Core.Services
         {
             _produtoRepository = produtoRepository;
         }
-        public async Task<Result<ICollection<Produto>>> ObterTodos()
+        public async Task<Result<ICollection<ProdutosDTO>>> ObterTodos()
         {
             var entities = await _produtoRepository.GetAllAsync();
             if (entities is null)
             {
                 return  Result.Fail("Nenhum produto encontrado");
             }
-            return Result.Ok(entities);
+            var entityList = entities.FromProdutos();
+            return Result.Ok(entityList);
         }
-        public async Task<Result<Produto>> ObterPorId(ObjectId id)
+        public async Task<Result<ProdutosDTO>> ObterPorId(ObjectId id)
         {
             var entity = await _produtoRepository.GetByIdAsync(id);
             if (entity == null)
@@ -41,7 +44,7 @@ namespace MinhaLoja.Core.Services
         }
 
         
-        public async Task<Result<Produto>> Adicionar(Produto produto)
+        public async Task<Result<ProdutosDTO>> Adicionar(ProdutosDTO produto)
         {
             if (produto is null )
             {
@@ -56,7 +59,7 @@ namespace MinhaLoja.Core.Services
 
         }
 
-        public async Task<Result<Produto>> Atualizar(Produto produto)
+        public async Task<Result<ProdutosDTO>> Atualizar(ProdutosDTO produto)
         {
             if (produto is null)
             {

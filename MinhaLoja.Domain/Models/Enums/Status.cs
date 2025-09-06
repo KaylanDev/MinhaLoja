@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MinhaLoja.Core.Models.Enums
+namespace MinhaLoja.Domain.Models.Enums
 {
     public enum Status
     {

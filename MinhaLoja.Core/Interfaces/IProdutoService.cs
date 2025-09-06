@@ -1,5 +1,5 @@
 ﻿using FluentResults;
-using MinhaLoja.Core.Models;
+using MinhaLoja.Core.Dtos;
 using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
@@ -11,13 +11,13 @@ namespace MinhaLoja.Core.Interfaces;
 
 public interface IProdutoService
 {
-   public Task<Result<ICollection<Produto>>> ObterTodos();
+   public Task<Result<ICollection<ProdutosDTO>>> ObterTodos();
 
-   public Task<Result<Produto>> ObterPorId(ObjectId id);
+   public Task<Result<ProdutosDTO>> ObterPorId(ObjectId id);
 
-   public Task<Result<Produto>> Adicionar(Produto produto);
+   public Task<Result<ProdutosDTO>> Adicionar(ProdutosDTO produto);
 
-   public Task<Result<Produto>> Atualizar(Produto produto);
+   public Task<Result<ProdutosDTO>> Atualizar(ProdutosDTO produto);
 
    public Task<Result> Remover(ObjectId id);
 }
