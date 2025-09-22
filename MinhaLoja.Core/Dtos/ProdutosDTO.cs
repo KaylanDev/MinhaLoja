@@ -11,7 +11,7 @@ namespace MinhaLoja.Core.Dtos
 {
     public class ProdutosDTO
     {
-      
+      public ObjectId Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public decimal Preco { get; set; }
@@ -25,6 +25,7 @@ namespace MinhaLoja.Core.Dtos
             if (produto == null) return null;
             return new ProdutosDTO
             {
+                Id = produto.Id,
                 Nome = produto.Nome,
                 Descricao = produto.Descricao,
                 Preco = produto.Preco,
@@ -39,6 +40,7 @@ namespace MinhaLoja.Core.Dtos
             if (produtoDto == null) return null;
             return new Produto
             {
+                Id = produtoDto.Id,
                 Nome = produtoDto.Nome,
                 Descricao = produtoDto.Descricao,
                 Preco = produtoDto.Preco,
@@ -51,10 +53,6 @@ namespace MinhaLoja.Core.Dtos
         // Remova o operador implícito para ICollection<ProdutosDTO> pois não é permitido conversão definida pelo usuário para interfaces.
         // Substitua por um método utilitário estático para realizar a conversão.
 
-        public static ICollection<ProdutosDTO> FromProdutos(ICollection<Produto> produtos)
-        {
-            if (produtos == null) return null;
-            return produtos.Select(p => (ProdutosDTO)p).ToList();
-        }
+      
     }
 }
