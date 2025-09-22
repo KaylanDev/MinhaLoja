@@ -10,7 +10,7 @@ namespace MinhaLoja.Domain.Models
     public class Carrinho
     {
         public ObjectId Id { get; set; }
-        public int UsuarioI { get; set; }
+        public ObjectId UsuarioId { get; set; }
         public DateTime DataCriacao { get; set; }
     }
 }

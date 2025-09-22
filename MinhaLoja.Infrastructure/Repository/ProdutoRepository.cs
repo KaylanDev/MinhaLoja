@@ -6,13 +6,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace MinhaLoja.Infrastructure.Repository
 {
-    public class ProdutoRepository : Repository<Produto> , IProdutoRepository
+    public class ProdutoRepository : Repository<Produto>, IProdutoRepository
     {
         public ProdutoRepository(AppDbContext context) : base(context)
         {
         }
+        public override async Task<Produto> GetByNameAsync(string name)
+        {
+
+            var produto = await _context.Set<Produto>().FirstOrDefaultAsync(p => string.Equals(p.Nome.ToLowerInvariant(), name.ToLowerInvariant()));
+            if (produto is null)
+            {
+                return null;
+            }
+            return produto;
+
+        }
+
+
     }
 }

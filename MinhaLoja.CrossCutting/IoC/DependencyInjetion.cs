@@ -25,7 +25,16 @@ public static class DependencyInjetion
         services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
         services.AddScoped<IProdutoService, ProdutoService>();
         services.AddScoped<IProdutoRepository, ProdutoRepository>();
-        
+
+        services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+        services.AddScoped<ICategoriaService, CategoriaService>();
+
+        services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();
+        services.AddScoped<ICarrinhoService, CarrinhoService>();
+
+        services.AddScoped<IItemCarrinhoRepository, ItemCarrinhoReposiotory>();
+
+
         return services;
     }
 }

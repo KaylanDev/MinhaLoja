@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MinhaLoja.Domain.Interface;
+using MinhaLoja.Domain.Models;
 using MinhaLoja.Infrastructure.Context;
 using MongoDB.Bson;
 using System;
@@ -12,7 +13,7 @@ namespace MinhaLoja.Infrastructure.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly AppDbContext _context;
+        protected readonly AppDbContext _context;
 
         public Repository(AppDbContext context)
         {
@@ -29,6 +30,11 @@ namespace MinhaLoja.Infrastructure.Repository
         {
            var entity = await _context.Set<T>().FindAsync(id);
             return entity;
+        }
+
+        public virtual async Task<T> GetByNameAsync(string name)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<T> CreateAsync(T entity)
@@ -57,5 +63,7 @@ namespace MinhaLoja.Infrastructure.Repository
             return i;
            
         }
+
     }
 }
+    

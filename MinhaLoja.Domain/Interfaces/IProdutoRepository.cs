@@ -5,5 +5,6 @@ namespace MinhaLoja.Domain.Interfaces
 {
     public  interface IProdutoRepository : IRepository<Produto>
     {
+      
     }
 }

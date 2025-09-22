@@ -8,6 +8,7 @@ using MinhaLoja.Domain.Models;
 using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -30,7 +31,7 @@ namespace MinhaLoja.Core.Services
             {
                 return  Result.Fail("Nenhum produto encontrado");
             }
-            var entityList = entities.FromProdutos();
+           var entityList = entities.FromEntities<Produto,ProdutosDTO>();
             return Result.Ok(entityList);
         }
         public async Task<Result<ProdutosDTO>> ObterPorId(ObjectId id)
@@ -40,7 +41,8 @@ namespace MinhaLoja.Core.Services
             {
                 return Result.Fail("Produto não encontrado!");
             }
-            return Result.Ok(entity);
+            ProdutosDTO entityDto = entity;
+            return Result.Ok(entityDto);
         }
 
         
@@ -55,7 +57,8 @@ namespace MinhaLoja.Core.Services
             {
                 return Result.Fail("Falha ao Adcionar produto!");
             }
-            return Result.Ok(createdProduto);
+            ProdutosDTO createdProdutoDto = createdProduto;
+            return Result.Ok(createdProdutoDto);
 
         }
 
@@ -77,8 +80,9 @@ namespace MinhaLoja.Core.Services
             {
                 return Result.Fail("Falha ao atualizar produto");
             }
+            ProdutosDTO produtoAtualizadoDto = produtoAtualizado;
 
-            return Result.Ok(produtoAtualizado);
+            return Result.Ok(produtoAtualizadoDto);
         }
 
         public async Task<Result> Remover(ObjectId id)
@@ -92,6 +96,25 @@ namespace MinhaLoja.Core.Services
             var result = await _produtoRepository.DeleteAsync(produtoExistente);
 
             return result ? Result.Ok() : Result.Fail("Falha ao remover produto");
+
+        }
+
+        public async Task<Result<ProdutosDTO>> ObterPorName(string name)
+        {
+            if (name is null)
+            {
+                return Result.Fail("O nome nn pode ser nulo");
+            }
+
+            var entity = await _produtoRepository.GetByNameAsync(name);
+
+            if (entity is null)
+            {
+                return Result.Fail("Produto nao encontrado!");
+            }
+            ProdutosDTO entityDto = entity;
+
+            return Result.Ok(entityDto);
 
         }
     }

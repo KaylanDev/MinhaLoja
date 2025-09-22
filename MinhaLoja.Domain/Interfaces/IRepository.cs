@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using MinhaLoja.Domain.Models;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ public interface IRepository<T>
 {
     public Task<ICollection<T>> GetAllAsync();
     public Task<T> GetByIdAsync(ObjectId id);
+    public Task<T> GetByNameAsync(string name);
     public Task<T> CreateAsync(T entity);
     public Task<T> UpdateAsync(T entity);
     public Task<bool> DeleteAsync(T entity);

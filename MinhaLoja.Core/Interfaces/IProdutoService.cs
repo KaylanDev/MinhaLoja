@@ -14,6 +14,7 @@ public interface IProdutoService
    public Task<Result<ICollection<ProdutosDTO>>> ObterTodos();
 
    public Task<Result<ProdutosDTO>> ObterPorId(ObjectId id);
+   public Task<Result<ProdutosDTO>> ObterPorName(string name);
 
    public Task<Result<ProdutosDTO>> Adicionar(ProdutosDTO produto);
 
