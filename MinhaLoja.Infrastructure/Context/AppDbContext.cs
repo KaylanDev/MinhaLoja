@@ -10,13 +10,13 @@ namespace MinhaLoja.Infrastructure.Context
         {
         }
 
-        DbSet<Produto> Produto { get; set; }
-        DbSet<Usuario> Usuario { get; set; }
-        DbSet<ItemCarrinho> ItemCarrinho { get; set; }
-        DbSet<ItemPedido> ItemPedido { get; set; }
-        DbSet<Carrinho> Carrinho { get; set; }
-        DbSet<Pedido> Pedido { get; set; }
-        DbSet<Categoria> Categoria { get; set; }
+       public DbSet<Produto> Produto { get; set; }
+       public DbSet<Usuario> Usuario { get; set; }
+       public DbSet<ItemCarrinho> ItemCarrinho { get; set; }
+       public DbSet<ItemPedido> ItemPedido { get; set; }
+       public DbSet<Carrinho> Carrinho { get; set; }
+       public DbSet<Pedido> Pedido { get; set; }
+       public DbSet<Categoria> Categoria { get; set; }
 
 
 
