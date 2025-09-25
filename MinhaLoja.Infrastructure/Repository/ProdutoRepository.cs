@@ -18,7 +18,7 @@ namespace MinhaLoja.Infrastructure.Repository
         public override async Task<Produto> GetByNameAsync(string name)
         {
 
-            var produto = await _context.Set<Produto>().FirstOrDefaultAsync(p => string.Equals(p.Nome.ToLowerInvariant(), name.ToLowerInvariant()));
+            var produto = await _context.Produto.FirstOrDefaultAsync(p => string.Equals(p.Nome.ToLowerInvariant(), name.ToLowerInvariant()));
             if (produto is null)
             {
                 return null;

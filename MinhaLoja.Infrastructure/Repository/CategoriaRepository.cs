@@ -18,7 +18,7 @@ public class CategoriaRepository : Repository<Categoria>, ICategoriaRepository
 
     public override  async Task<Categoria> GetByNameAsync(string name)
     {
-        var categoria = await _context.Set<Categoria>().FirstOrDefaultAsync(p => string.Equals(p.Nome.ToLowerInvariant(), name.ToLowerInvariant()));
+        var categoria = await _context.Categoria.FirstOrDefaultAsync(p => string.Equals(p.Nome.ToLowerInvariant(), name.ToLowerInvariant()));
         if (categoria is null)
         {
             return null;

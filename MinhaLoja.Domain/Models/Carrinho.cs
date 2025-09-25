@@ -12,5 +12,6 @@ namespace MinhaLoja.Domain.Models
         public ObjectId Id { get; set; }
         public ObjectId UsuarioId { get; set; }
         public DateTime DataCriacao { get; set; }
+        public ICollection<ItemCarrinho> Itens { get; set; } = new List<ItemCarrinho>();
     }
 }
