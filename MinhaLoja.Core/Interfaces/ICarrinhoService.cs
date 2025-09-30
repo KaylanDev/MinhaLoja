@@ -12,9 +12,9 @@ namespace MinhaLoja.Core.Interfaces
     public interface ICarrinhoService
     {
         Task<Result<Carrinho>> ObterCarrinhoDoUsuarioAsync(ObjectId usuarioId);
-        Task<Result<ItemCarrinho>> AdicionarItemAsync(ObjectId usuarioId, string produtoName, int quantidade);
-        Task<Result<ItemCarrinho>> RemoverItemAsync(ObjectId itemCarrinhoId);
-        Task<Result<ItemCarrinho>> AtualizarQuantidadeAsync(ObjectId itemCarrinhoId, int novaQuantidade);
+        Task<Result<ItemCarrinho>> AdicionarItemAsync(ObjectId carrinhoId,ObjectId itemCarrinhoId, ObjectId produtoId, int quantidade);
+        Task<Result<ItemCarrinho>> RemoverItemAsync(ObjectId itemCarrinhoId, ObjectId carrinhoId);
+        Task<Result<ItemCarrinho>> AtualizarQuantidadeAsync(ObjectId carrinhoId,ObjectId itemCarrinhoId, int novaQuantidade);
         Task<Result> LimparCarrinhoAsync(ObjectId usuarioId);
     }
 }
