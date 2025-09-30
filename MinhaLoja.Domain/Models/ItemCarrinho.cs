@@ -14,5 +14,6 @@ namespace MinhaLoja.Domain.Models
         public ObjectId ProdutoId { get; set; }
         public int Quantidade { get; set; }
         public decimal PrecoUnitario { get; set; }
+        public Produto? Produto { get; set; }
     }
 }

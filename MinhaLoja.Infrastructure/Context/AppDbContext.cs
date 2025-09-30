@@ -25,8 +25,6 @@ namespace MinhaLoja.Infrastructure.Context
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Produto>().ToCollection("Produtos");
             modelBuilder.Entity<Usuario>().ToCollection("Usuarios");
-            modelBuilder.Entity<ItemCarrinho>().ToCollection("ItensCarrinho");
-            modelBuilder.Entity<ItemPedido>().ToCollection("ItensPedido");
             modelBuilder.Entity<Carrinho>().ToCollection("Carrinhos");
             modelBuilder.Entity<Pedido>().ToCollection("Pedidos");
             modelBuilder.Entity<Categoria>().ToCollection("Categorias");
