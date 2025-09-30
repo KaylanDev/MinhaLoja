@@ -32,10 +32,6 @@ namespace MinhaLoja.Infrastructure.Repository
             return entity;
         }
 
-        public virtual async Task<T> GetByNameAsync(string name)
-        {
-            throw new NotImplementedException();
-        }
 
         public async Task<T> CreateAsync(T entity)
         {

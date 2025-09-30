@@ -15,7 +15,7 @@ namespace MinhaLoja.Infrastructure.Repository
         public ProdutoRepository(AppDbContext context) : base(context)
         {
         }
-        public override async Task<Produto> GetByNameAsync(string name)
+        public  async Task<Produto> GetByNameAsync(string name)
         {
 
             var produto = await _context.Produto.FirstOrDefaultAsync(p => string.Equals(p.Nome.ToLowerInvariant(), name.ToLowerInvariant()));
