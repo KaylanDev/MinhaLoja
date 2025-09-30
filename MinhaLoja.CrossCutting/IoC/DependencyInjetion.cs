@@ -32,9 +32,6 @@ public static class DependencyInjetion
         services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();
         services.AddScoped<ICarrinhoService, CarrinhoService>();
 
-        services.AddScoped<IItemCarrinhoRepository, ItemCarrinhoReposiotory>();
-
-
         return services;
     }
 }
