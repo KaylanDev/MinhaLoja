@@ -60,7 +60,7 @@ namespace MinhaLoja.Core.Services
 
         public Task<Result<ItemCarrinho>> AtualizarQuantidadeAsync(ObjectId itemCarrinhoId, int novaQuantidade)
         {
-            throw new NotImplementedException();
+            
         }
 
         public Task<Result> LimparCarrinhoAsync(ObjectId usuarioId)
