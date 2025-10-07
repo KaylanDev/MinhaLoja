@@ -8,8 +8,9 @@ namespace MinhaLoja.Domain.Models.Enums
 {
     public enum Status
     {
-        Pendente,
+        PagamentoPendente,
         Processando,
+        AguardandoEnvio,
         Enviado,
         Entregue,
         Cancelado

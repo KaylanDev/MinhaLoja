@@ -18,13 +18,13 @@ namespace MinhaLoja.Core.Services
     {
         private readonly ICarrinhoRepository _carrinhoRepository;
         private readonly IProdutoRepository _produtoRepository;
-        private readonly IUsuarioRepository _usuarioRepository;
+       
 
-        public CarrinhoService(ICarrinhoRepository carrinhoRepository, IProdutoRepository produtoRepository, IUsuarioRepository usuarioRepository)
+        public CarrinhoService(ICarrinhoRepository carrinhoRepository, IProdutoRepository produtoRepository)
         {
             _carrinhoRepository = carrinhoRepository;
             _produtoRepository = produtoRepository;
-            _usuarioRepository = usuarioRepository;
+         
         }
 
         public async Task<Result<Carrinho>> ObterCarrinhoDoUsuarioAsync(ObjectId usuarioId)
