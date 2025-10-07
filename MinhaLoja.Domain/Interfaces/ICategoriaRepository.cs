@@ -10,5 +10,6 @@ namespace MinhaLoja.Domain.Interfaces
 {
     public interface ICategoriaRepository : IRepository<Categoria>
     {
+        public Task<Categoria> GetByNameAsync(string nome);
     }
 }

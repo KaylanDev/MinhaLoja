@@ -5,6 +5,8 @@ namespace MinhaLoja.Domain.Interfaces
 {
     public  interface IProdutoRepository : IRepository<Produto>
     {
-      
+        public  Task<Produto> GetByNameAsync(string name);
+
+
     }
 }

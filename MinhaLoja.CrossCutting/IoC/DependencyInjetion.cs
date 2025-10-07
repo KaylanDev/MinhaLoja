@@ -22,6 +22,11 @@ public static class DependencyInjetion
         var mongoConnectionString = configuration["Database:ConnectionString"];
         services.AddDbContext<AppDbContext>(options =>
             options.UseMongoDB(mongoConnectionString, "MinhaLoja"));
+        var postgreConnectionString = configuration.GetConnectionString("PostgreSQL");
+        services.AddDbContext<AppDbContext>(options =>
+            options.UseNpgsql(postgreConnectionString));
+
+
         services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
         services.AddScoped<IProdutoService, ProdutoService>();
         services.AddScoped<IProdutoRepository, ProdutoRepository>();
@@ -31,6 +36,9 @@ public static class DependencyInjetion
 
         services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();
         services.AddScoped<ICarrinhoService, CarrinhoService>();
+
+        services.AddScoped<IPedidoRepository, PedidoRepository>();
+        services.AddScoped<IPedidoService, PedidoService>();
 
         return services;
     }

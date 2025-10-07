@@ -15,7 +15,7 @@ namespace MinhaLoja.Infrastructure.Context
        public DbSet<ItemCarrinho> ItemCarrinho { get; set; }
        public DbSet<ItemPedido> ItemPedido { get; set; }
        public DbSet<Carrinho> Carrinho { get; set; }
-       public DbSet<Pedido> Pedido { get; set; }
+       public DbSet<Pedido> Pedidos { get; set; }
        public DbSet<Categoria> Categoria { get; set; }
 
 

@@ -1,5 +1,6 @@
 ﻿using MinhaLoja.Domain.Interface;
 using MinhaLoja.Domain.Models;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,10 @@ using System.Threading.Tasks;
 
 namespace MinhaLoja.Domain.Interfaces
 {
-    public interface IUsuarioRepository : IRepository<Usuario>
+    public interface IPedidoRepository : IRepository<Pedido>
     {
+
+        public Task<IEnumerable<Pedido>> ObterPedidoPorUserId(ObjectId usuarioId);
+
     }
 }
